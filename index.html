@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCare - Educational Resources Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Auth Container -->
+    <div id="auth-container">
+        <div id="login-box">
+            <h2>Welcome to EduCare</h2>
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="showLoginForm()">Login</button>
+                <button class="tab-btn" onclick="showRegisterForm()">Register</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit">Login</button>
+                <p class="form-footer">
+                    Don't have an account? <a href="#" onclick="showRegisterForm()">Register here</a>
+                </p>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="registerForm" class="hidden">
+                <div class="form-group">
+                    <input type="text" name="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="fullName" required>
+                    <label>Full Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="college">
+                    <label>College Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="rollNumber">
+                    <label>Roll Number</label>
+                </div>
+                <div class="form-group">
+                    <select name="course">
+                        <option value="">Select Course</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="M.Tech">M.Tech</option>
+                        <option value="BCA">BCA</option>
+                        <option value="MCA">MCA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="branch">
+                        <option value="">Select Branch</option>
+                        <option value="CSE">Computer Science</option>
+                        <option value="IT">Information Technology</option>
+                        <option value="ECE">Electronics</option>
+                        <option value="ME">Mechanical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="semester">
+                        <option value="">Select Semester</option>
+                        <option value="1">1st Semester</option>
+                        <option value="2">2nd Semester</option>
+                        <option value="3">3rd Semester</option>
+                        <option value="4">4th Semester</option>
+                        <option value="5">5th Semester</option>
+                        <option value="6">6th Semester</option>
+                        <option value="7">7th Semester</option>
+                        <option value="8">8th Semester</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" pattern="[0-9]{10}">
+                    <label>Phone (10 digits)</label>
+                </div>
+                <button type="submit">Register</button>
+                <p class="form-footer">
+                    Already have an account? <a href="#" onclick="showLoginForm()">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content (restore all sections) -->
+    <div id="main-content">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="logo.png" alt="EduCare Logo" class="logo">
+                    <h1>EduCare</h1>
+                </div>
+                <div class="user-info">
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#notes">Notes</a></li>
+                    <li><a href="#papers">Previous Papers</a></li>
+                    <li><a href="#questions">Important Questions</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home" class="active-section">
+                <div class="hero-section">
+                    <h1>Welcome to EduCare</h1>
+                    <p class="tagline">Empowering Education, Enriching Futures</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Comprehensive Study Materials</h3>
+                        <p>Access a vast library of well-organized study materials, notes, and resources tailored to your curriculum.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>Previous Year Papers</h3>
+                        <p>Practice with extensive collection of previous year question papers and boost your exam preparation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Important Questions</h3>
+                        <p>Focus on what matters with our curated collection of important questions and topics.</p>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Why Choose EduCare?</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <h4>📌 Organized Learning</h4>
+                            <p>All materials are systematically organized by course, branch, and semester.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>🔄 Regular Updates</h4>
+                            <p>Content is regularly updated to match the latest curriculum changes.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>📱 Easy Access</h4>
+                            <p>Access your study materials anytime, anywhere, on any device.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>🤝 Community Driven</h4>
+                            <p>Join a community of learners and share resources with peers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Ready to Excel?</h2>
+                    <p>Explore our resources and take your academic journey to the next level.</p>
+                    <div class="cta-buttons">
+                        <a href="#notes" class="cta-button primary">Browse Notes</a>
+                        <a href="#papers" class="cta-button secondary">Practice Papers</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="notes" class="section hidden">
+                <h2>Study Notes</h2>
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="physics">
+                        <div class="subject-icon">⚛️</div>
+                        <h3>Applied Physics</h3>
+                        <p>Fundamental concepts and applications</p>
+                    </div>
+                    <div class="subject-card" data-subject="maths">
+                        <div class="subject-icon">📐</div>
+                        <h3>Applied Mathematics</h3>
+                        <p>Mathematical principles and problems</p>
+                    </div>
+                    <div class="subject-card" data-subject="chemistry">
+                        <div class="subject-icon">🧪</div>
+                        <h3>Chemistry</h3>
+                        <p>Chemical concepts and reactions</p>
+                    </div>
+                    <div class="subject-card" data-subject="env">
+                        <div class="subject-icon">🌍</div>
+                        <h3>Environmental Studies</h3>
+                        <p>Environmental awareness and sustainability</p>
+                    </div>
+                    <div class="subject-card" data-subject="c">
+                        <div class="subject-icon">💻</div>
+                        <h3>Programming in C</h3>
+                        <p>C programming fundamentals</p>
+                    </div>
+                    <div class="subject-card" data-subject="manufacturing">
+                        <div class="subject-icon">⚙️</div>
+                        <h3>Manufacturing Process</h3>
+                        <p>Industrial processes and techniques</p>
+                    </div>
+                    <div class="subject-card" data-subject="ethics">
+                        <div class="subject-icon">🤝</div>
+                        <h3>Human Values and Ethics</h3>
+                        <p>Moral principles and values</p>
+                    </div>
+                    <div class="subject-card" data-subject="constitution">
+                        <div class="subject-icon">📜</div>
+                        <h3>Indian Constitution</h3>
+                        <p>Constitutional rights and duties</p>
+                    </div>
+                    <div class="subject-card" data-subject="communication">
+                        <div class="subject-icon">💭</div>
+                        <h3>Communication Skills</h3>
+                        <p>Effective communication techniques</p>
+                    </div>
+                </div>
+                <div id="notesContent" class="content-area hidden"></div>
+            </section>
+
+            <section id="papers" class="section hidden">
+                <h2>Previous Papers</h2>
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="physics">
+                        <div class="subject-icon">⚛️</div>
+                        <h3>Applied Physics</h3>
+                        <p>Fundamental concepts and applications</p>
+                    </div>
+                    <div class="subject-card" data-subject="maths">
+                        <div class="subject-icon">📐</div>
+                        <h3>Applied Mathematics</h3>
+                        <p>Mathematical principles and problems</p>
+                    </div>
+                    <div class="subject-card" data-subject="chemistry">
+                        <div class="subject-icon">🧪</div>
+                        <h3>Chemistry</h3>
+                        <p>Chemical concepts and reactions</p>
+                    </div>
+                    <div class="subject-card" data-subject="env">
+                        <div class="subject-icon">🌍</div>
+                        <h3>Environmental Studies</h3>
+                        <p>Environmental awareness and sustainability</p>
+                    </div>
+                    <div class="subject-card" data-subject="c">
+                        <div class="subject-icon">💻</div>
+                        <h3>Programming in C</h3>
+                        <p>C programming fundamentals</p>
+                    </div>
+                    <div class="subject-card" data-subject="manufacturing">
+                        <div class="subject-icon">⚙️</div>
+                        <h3>Manufacturing Process</h3>
+                        <p>Industrial processes and techniques</p>
+                    </div>
+                    <div class="subject-card" data-subject="ethics">
+                        <div class="subject-icon">🤝</div>
+                        <h3>Human Values and Ethics</h3>
+                        <p>Moral principles and values</p>
+                    </div>
+                    <div class="subject-card" data-subject="constitution">
+                        <div class="subject-icon">📜</div>
+                        <h3>Indian Constitution</h3>
+                        <p>Constitutional rights and duties</p>
+                    </div>
+                    <div class="subject-card" data-subject="communication">
+                        <div class="subject-icon">💭</div>
+                        <h3>Communication Skills</h3>
+                        <p>Effective communication techniques</p>
+                    </div>
+                </div>
+                <div id="papersContent" class="content-area hidden"></div>
+            </section>
+
+            <section id="questions" class="section hidden">
+                <h2>Important Questions</h2>
+                <div class="subjects-grid">
+                    <div class="subject-card" data-subject="physics">
+                        <div class="subject-icon">⚛️</div>
+                        <h3>Applied Physics</h3>
+                        <p>Fundamental concepts and applications</p>
+                    </div>
+                    <div class="subject-card" data-subject="maths">
+                        <div class="subject-icon">📐</div>
+                        <h3>Applied Mathematics</h3>
+                        <p>Mathematical principles and problems</p>
+                    </div>
+                    <div class="subject-card" data-subject="chemistry">
+                        <div class="subject-icon">🧪</div>
+                        <h3>Chemistry</h3>
+                        <p>Chemical concepts and reactions</p>
+                    </div>
+                    <div class="subject-card" data-subject="env">
+                        <div class="subject-icon">🌍</div>
+                        <h3>Environmental Studies</h3>
+                        <p>Environmental awareness and sustainability</p>
+                    </div>
+                    <div class="subject-card" data-subject="c">
+                        <div class="subject-icon">💻</div>
+                        <h3>Programming in C</h3>
+                        <p>C programming fundamentals</p>
+                    </div>
+                    <div class="subject-card" data-subject="manufacturing">
+                        <div class="subject-icon">⚙️</div>
+                        <h3>Manufacturing Process</h3>
+                        <p>Industrial processes and techniques</p>
+                    </div>
+                    <div class="subject-card" data-subject="ethics">
+                        <div class="subject-icon">🤝</div>
+                        <h3>Human Values and Ethics</h3>
+                        <p>Moral principles and values</p>
+                    </div>
+                    <div class="subject-card" data-subject="constitution">
+                        <div class="subject-icon">📜</div>
+                        <h3>Indian Constitution</h3>
+                        <p>Constitutional rights and duties</p>
+                    </div>
+                    <div class="subject-card" data-subject="communication">
+                        <div class="subject-icon">💭</div>
+                        <h3>Communication Skills</h3>
+                        <p>Effective communication techniques</p>
+                    </div>
+                </div>
+                <div id="questionsContent" class="content-area hidden"></div>
+            </section>
+        </main>
+    </div>
+    <div id="userDetailsModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>User Details</h2>
+            <div class="user-details">
+                <p><strong>Username:</strong> <span id="userUsername"></span></p>
+                <p><strong>Full Name:</strong> <span id="userFullName"></span></p>
+                <p><strong>College:</strong> <span id="userCollege"></span></p>
+                <p><strong>Roll Number:</strong> <span id="userRollNumber"></span></p>
+                <p><strong>Course:</strong> <span id="userCourse"></span></p>
+                <p><strong>Branch:</strong> <span id="userBranch"></span></p>
+                <p><strong>Semester:</strong> <span id="userSemester"></span></p>
+                <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="userPhone"></span></p>
+            </div>
+            <button class="edit-btn">Edit Details</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
